@@ -169,7 +169,6 @@ nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \
                 --fasta $cvmfs_path/Mouse_chr18_reference/chr18.fa \
                 --gtf $cvmfs_path/Mouse_chr18_reference/chr_18_startOfLine.gtf \
                 --star_index $cvmfs_path/Mouse_chr18_reference/chr18_STAR_singularity_index/ \
-                --max_memory '6 GB' --max_cpus 2 \
                 --outdir results \
                 -with-report excecution_report.html \
                 -with-timeline timeline_report.html \
@@ -214,6 +213,15 @@ nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \
                 -with-timeline timeline_report.html \
                 -with-dag flowchart.png
 ```
+
+```
+-[nf-core/rnaseq] Pipeline completed successfully-
+Completed at: 20-Jan-2023 05:44:20
+Duration    : 4m 34s
+CPU hours   : 1.9
+Succeeded   : 207
+```
+TODO: check runtime comparison, clear cache and rerun. 
 
 ## Materials
 - [RNAseq workshop materials](https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/1.1_Download_data.html)
