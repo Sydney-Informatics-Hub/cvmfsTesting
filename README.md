@@ -158,12 +158,13 @@ with open('working_directory/nextflowNew.config', 'w') as f:
 
 ## Rerun nf-core/rnaseq with updated config
 
-Overwrote `nextflow.config` file in the working_directory and ran the pipeline with: 
+Replaced `nextflow.config` file with `nextflowUnpacked.config` in the working_directory and ran the pipeline with: 
 
 ```bash
 cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722
 
 nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \
+                -config nextflowUnpacked.config \
                 --input samplesheet.csv \
                 -profile singularity \
                 --fasta $cvmfs_path/Mouse_chr18_reference/chr18.fa \
@@ -175,13 +176,12 @@ nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \
                 -with-dag flowchart.png
 ```
 
-Pipeline ran to completion :)
-
+Pipeline ran to completion 
 ```
 -[nf-core/rnaseq] Pipeline completed successfully-
-Completed at: 20-Jan-2023 05:26:21
-Duration    : 7m 55s
-CPU hours   : 2.8
+Completed at: 09-Feb-2023 06:12:16
+Duration    : 4m 39s
+CPU hours   : 1.9
 Succeeded   : 207
 ```
 
@@ -203,6 +203,7 @@ CVMFS_PUBLIC_KEY="/etc/cvmfs/keys/containers.biocommons.aarnet.edu.au/containers
 Reran the pipeline:
 ```
 nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \
+                -config nextflow.config \
                 --input samplesheet.csv \
                 -profile singularity \
                 --fasta $cvmfs_path/Mouse_chr18_reference/chr18.fa \
@@ -221,7 +222,9 @@ Duration    : 4m 34s
 CPU hours   : 1.9
 Succeeded   : 207
 ```
-TODO: check runtime comparison, clear cache and rerun. 
+
+TODO: follow up how caching affects runtime differences. First run with unpacked containers was ~7 min, second run 4.5 min. 
+
 
 ## Materials
 - [RNAseq workshop materials](https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/1.1_Download_data.html)
