@@ -810,6 +810,13 @@ tree /cvmfs/tools.biocommons.aarnet.edu.au
 </summary>
 
 ```
-
+/cvmfs/tools.biocommons.aarnet.edu.au
+└── all_input_fastqs
+    ├── SRR3473984_selected.fastq.gz
+    ├── SRR3473985_selected.fastq.gz
+    ├── SRR3473986_selected.fastq.gz
+    ├── SRR3473987_selected.fastq.gz
+    ├── SRR3473988_selected.fastq.gz
+    └── SRR3473989_selected.fastq.gz
 ```
 </details>
